@@ -28,12 +28,16 @@ class MainActivityViewModel @ViewModelInject constructor(
     }
 
     @ExperimentalPagingApi
-    val searchResults = currentQuery.asFlow().flatMapLatest { query ->
+    val localProducts = currentQuery.asFlow().flatMapLatest { query ->
         query?.let {
             productRepository.getProductPaged(query, "acs", true)
         } ?: emptyFlow()
     }.cachedIn(viewModelScope)
 
+
+    fun sortItemsBy(text: String) {
+        currentQuery.value = text
+    }
 
     companion object {
         private const val CURRENT_QUERY = "current_query"
