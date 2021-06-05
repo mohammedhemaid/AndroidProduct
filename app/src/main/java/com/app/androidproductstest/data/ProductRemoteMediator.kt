@@ -21,7 +21,7 @@ class ProductRemoteMediator(
 ) : RemoteMediator<Int, ProductEntity>() {
 
     private val productsDao = productsDatabase.productDao()
-
+    private val startPosition = 1
     @ExperimentalPagingApi
     override suspend fun load(
         loadType: LoadType,
@@ -31,7 +31,7 @@ class ProductRemoteMediator(
         val page = when (loadType) {
             LoadType.REFRESH -> STARTING_PAGE_INDEX
             LoadType.PREPEND -> return MediatorResult.Success(endOfPaginationReached = true)
-            LoadType.APPEND -> 1
+            LoadType.APPEND -> startPosition + 1
         }
 
         try {
