@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.app.androidproductstest.api.dto.Product
 import com.app.androidproductstest.databinding.RowProductBinding
+import com.bumptech.glide.Glide
 
-class ProductAdapter :
-    PagingDataAdapter<Product, ProductAdapter.ViewHolder>(COMPARATOR) {
+class ProductListAdapter :
+    PagingDataAdapter<Product, ProductListAdapter.ViewHolder>(COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -31,6 +32,7 @@ class ProductAdapter :
 
         fun bindView(product: Product?) {
             binding.apply {
+                Glide.with(image).load(product?.imageUrl).into(image)
                 name.text = product?.name
                 brand.text = product?.brand
                 price.text = product?.price.toString()

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidProductsTest</string>
+    <string name="retry">Retry</string>
+    <string name="you_re_offline">You\'re offline</string>
 </resources>

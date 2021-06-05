@@ -6,6 +6,7 @@ buildscript {
         hiltAndroidXVersion = '1.0.0-alpha03'
         pagingVersion = '3.0.0-alpha13'
         archLifecycleVersion = "2.2.0"
+        activity_version = "1.2.3"
     }
     repositories {
         google()
