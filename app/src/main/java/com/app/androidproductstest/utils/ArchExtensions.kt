@@ -1,7 +1,5 @@
 package com.app.androidproductstest.utils
 
-import android.app.Activity
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 

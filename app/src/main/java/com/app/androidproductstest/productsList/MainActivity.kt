@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.PagingData
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.app.androidproductstest.api.dto.Product
 import com.app.androidproductstest.databinding.ActivityMainBinding
 import com.app.androidproductstest.utils.observe
